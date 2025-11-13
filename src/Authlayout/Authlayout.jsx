@@ -7,6 +7,7 @@ import Footer from '../Components/Footer/Footer';
 const Authlayout = () => {
     return (
         <div className="flex flex-col min-h-screen bg-gradient-to-r from-orange-50 to-amber-50">
+<title>Authentication</title>
           
             <Navbar>
 

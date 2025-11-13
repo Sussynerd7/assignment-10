@@ -40,7 +40,7 @@ const Myrequest = () => {
                 if (newStatus === 'accepted') {
                     toast.success("Request accepted successfully! 🎉");
                 } else if (newStatus === 'rejected') {
-                    toast.info("Request rejected. 🚫");
+                    toast.success("Request rejected. 🚫");
                 }
                 fetchRequests();
             } else {
@@ -62,7 +62,9 @@ const Myrequest = () => {
 
     return (
         <div className='p-6'>
-            <h1 className='text-3xl font-bold mb-6'>Pending Food Requests</h1>
+<title>My request</title>
+            
+            <h1 className='text-3xl font-bold mb-6'>Pending Food Requests (if you will reject/accept the status will be updated)</h1>
             {pendingRequests.length === 0 ? (
                 <p>No new pending requests found for your contributed items.</p>
             ) : (
@@ -80,7 +82,7 @@ const Myrequest = () => {
                                     Accept
                                 </button>
                                 <button 
-                                    onClick={() => handleStatusUpdate(food._id, 'rejected')}
+                                    onClick={() => handleStatusUpdate(food._id, 'rejected','pending')}
                                     className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
                                 >
                                     Reject

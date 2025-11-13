@@ -31,7 +31,7 @@ const Allfood = () => {
     // console.log(foods)
     return (
         <div className='bg-gradient-to-r h-full from-orange-50 to-amber-50'>
-
+<title>All foods</title>
             <h1 className='text-secondary text-[40px] font-semibold text-center my-10'>Browse the available food({foods.length})</h1>
 
 {

@@ -127,6 +127,8 @@ e.preventDefault()
     
     return (
         <div className="max-w-4xl mx-auto p-4 md:p-8">
+<title>Details</title>
+
 <ToastContainer/>
             <div className="md:flex md:space-x-8">
 
@@ -177,7 +179,7 @@ e.preventDefault()
     <label htmlFor="reqlocation" className="text-gray-700 font-semibold mt-4 self-start w-full">
         Location
     </label>
-    <input 
+    <input required
         name='reqlocation' 
         type="text" 
         placeholder='e.g., City, District' 
@@ -187,7 +189,7 @@ e.preventDefault()
     <label htmlFor="reqreason" className="text-gray-700 font-semibold mt-4 self-start w-full">
         Reason
     </label>
-    <textarea 
+    <textarea required
         name='reqreason' 
         placeholder='Why are you requesting this food?' 
         className="w-full p-2 border border-gray-300 rounded-md mt-1 focus:ring-blue-500 focus:border-blue-500" 
@@ -197,7 +199,7 @@ e.preventDefault()
     <label htmlFor="contact" className="text-gray-700 font-semibold mt-4 self-start w-full">
         Contact
     </label>
-    <input 
+    <input required
         name='contact' 
         type="text" 
         placeholder='Your phone number or best contact' 
@@ -208,6 +210,7 @@ e.preventDefault()
         Status
     </label>
     <input 
+    required
         name='reqstatus' 
         readOnly 
         defaultValue={"Pending"} 

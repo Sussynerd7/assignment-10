@@ -99,6 +99,8 @@ const handleupdate = async (e) => {
 
     return (
         <div className="container mx-auto p-4 max-w-4xl">
+<title>Update food</title>
+
             <ToastContainer/>
             <header className="flex justify-between items-center pb-4 border-b border-gray-300 mb-6">
                 <h1 className="text-2xl font-bold text-gray-800">

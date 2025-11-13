@@ -14,16 +14,17 @@ import OurMission from './Section1';
 import HowItWorks from './Howitworks';
 import api from '../../Api/Api';
 
-const Home = () => {
+const Home = () => {            
     useEffect(() => {
         Aos.init({
             duration: 800,
             once: true,
-        });
+        }); 
     }, []);
 
     return (
         <div className='bg-gradient-to-r from-orange-50 to-amber-50'>
+            <title>Home -Plate Share</title>
             {/* The ToastContainer component needs to be rendered at the root level */}
 
             <Banner></Banner>

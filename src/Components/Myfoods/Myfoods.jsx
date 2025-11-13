@@ -42,6 +42,7 @@ useEffect(() => {
     }, [user]); 
     return (
         <div className='my-5 2xl:my-10 space-y-3 px-2  from-orange-50 to-amber-50'>
+<title>My foods</title>
 
             {
     load? <div className='mx-auto flex justify-center my-10'><span className="loading loading-spinner xl:w-[500px] 2xl:w-[700px] w-[300px]"></span></div>:

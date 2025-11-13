@@ -55,6 +55,8 @@ const Create = () => {
 
     return (
         <div className="max-w-xl mx-auto p-4 md:p-8">
+<title>Add Food</title>
+
            <ToastContainer/>
             <h2 className="text-3xl font-bold mb-6 text-center">Add New Food Item</h2>
             <form onSubmit={handlecreatefood}>
