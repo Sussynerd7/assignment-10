@@ -104,7 +104,7 @@ const handleupdate = async (e) => {
                 <h1 className="text-2xl font-bold text-gray-800">
                     Food Details: {title}
                 </h1>
-                <span className={`px-3 py-1 text-sm font-semibold text-white rounded ${statusColor}`}>
+                <span className={`px-3 py-1 text-[15px] font-semibold text-white rounded ${statusColor}`}>
                     {status}
                 </span>
             </header>
