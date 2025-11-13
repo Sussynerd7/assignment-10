@@ -29,7 +29,6 @@ useEffect(() => {
         })
     
             .then(res => {
-                console.log("Fetched user foods:", res.data);
                 setmyfood(res.data);
             })
             .catch(error => {

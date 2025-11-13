@@ -10,7 +10,7 @@ const Foodgrid = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setload(true)
+        setload(true)   
         const response = await api.get('/presorted')
 
          const available = response.data.filter(food =>food.status === "available")

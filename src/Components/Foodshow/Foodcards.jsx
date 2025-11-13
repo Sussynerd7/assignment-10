@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaDollarSign } from 'react-icons/fa';
 import { Link } from 'react-router';
-import api from '../../Api/Api';
+// import api from '../../Api/Api';
 import { useAuth } from '../../Authprovider/CustomAuthhook';
 
 const Foodcards = ({ food }) => {
@@ -13,9 +13,7 @@ const Foodcards = ({ food }) => {
         capability, 
         pickupLocation, 
         expireDate, 
-        description,
-        contributorPhotoURL,
-        email,     
+            
         contributor,          
         _id 
     } = food;
