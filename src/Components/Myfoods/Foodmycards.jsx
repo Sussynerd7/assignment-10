@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router';
 // const [foodData,setFoodData] = useState([])
 const MinimalFoodCard = ({ food }) => {
+
+    const [load ,setload] = useState(false)
     const { 
         title, 
         imgurl,
@@ -12,7 +14,7 @@ const MinimalFoodCard = ({ food }) => {
     } = food;
 
     
-    console.log(_id)
+    // console.log(_id)
     const statusColor = status === 'available' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700';
 
     return (
