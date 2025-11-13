@@ -48,7 +48,7 @@ const dynamicbtn = <>
     <NavLink
       to="/"
       className={({ isActive }) =>
-        `pb-1 2xl:text-[18px] text-[14px] border-b-2 ${
+        `pb-1 2xl:text-[18px] md:text-[18px] text-[14px] border-b-2 ${
           isActive
             ? "border-[#34533f]"
             : "border-transparent hover:border-[#34533f] transition-all duration-200"}`}>
@@ -58,7 +58,7 @@ const dynamicbtn = <>
     <NavLink
       to="/foods"
       className={({ isActive }) =>
-        `pb-1 border-b-2 2xl:text-[18px] text-[14px] ${
+        `pb-1 border-b-2 2xl:text-[18px] md:text-[18px] text-[14px] ${
           isActive
             ? "border-[#34533f]"
             : "border-transparent hover:border-[#34533f] transition-all duration-200"
