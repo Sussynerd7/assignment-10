@@ -1,12 +1,12 @@
 import React from 'react';
 import api from '../Api/Api';
 import { useAuth } from '../Authprovider/CustomAuthhook';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 // import api from '../../Api/Api';
 
 const Create = () => {
     const {user,accessToken} = useAuth()
-    console.log(user)
+    // console.log(user)
     const handlecreatefood = async (e) => {
         e.preventDefault();
         
@@ -44,8 +44,9 @@ const Create = () => {
         try {
             const response = await api.post('/create', formData);
             console.log('Food item created:', response.data);
-            e.target.reset();
-            toast("Posted new food")
+             toast("Posted new food")
+           
+           
         } catch (error) {
             console.error( error);
             
@@ -54,6 +55,7 @@ const Create = () => {
 
     return (
         <div className="max-w-xl mx-auto p-4 md:p-8">
+           <ToastContainer/>
             <h2 className="text-3xl font-bold mb-6 text-center">Add New Food Item</h2>
             <form onSubmit={handlecreatefood}>
                 <fieldset className='form space-y-4'>

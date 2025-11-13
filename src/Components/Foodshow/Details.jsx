@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../../Api/Api';
 import { useParams } from 'react-router';
 import { useAuth } from '../../Authprovider/CustomAuthhook';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Details = () => {
     const [details, setDetails] = useState(null);
@@ -45,7 +45,7 @@ e.preventDefault()
                 status: "pending"
             }));
 
-            toast('Status updated to PENDING.');
+            toast('Status updated to PENDING and requested.');
 
         } catch (error) {
             console.error("Error :", error);
@@ -127,7 +127,7 @@ e.preventDefault()
     
     return (
         <div className="max-w-4xl mx-auto p-4 md:p-8">
-
+<ToastContainer/>
             <div className="md:flex md:space-x-8">
 
                 <div className="flex-shrink-0 mb-6 md:mb-0 w-full md:w-96">
@@ -257,7 +257,7 @@ e.preventDefault()
                     {description}
                 </p>
             </div>
-
+{/* </ToastContainer> */}
         </div>
     );
 };

@@ -10,11 +10,13 @@ import Create from "../Cruds/Create";
 import Myfoods from "../Components/Myfoods/Myfoods";
 import Update from "../Components/Update/Update";
 import Myrequest from "../Cruds/Myrequest";
+import Error from "../Error/Error";
 
 const router = createBrowserRouter([
     {
         path: '/',
         Component: Homelayout,
+        errorElement:<Error></Error>,
         children: [
 
             {
@@ -54,6 +56,7 @@ const router = createBrowserRouter([
      {
         path: '/auth',
         element: <Authlayout></Authlayout>,
+        errorElement:<Error></Error>,
         children: [
             {
                 path: '/auth/register',

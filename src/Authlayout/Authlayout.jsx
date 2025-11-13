@@ -6,17 +6,21 @@ import Footer from '../Components/Footer/Footer';
 
 const Authlayout = () => {
     return (
-        <div class=" px-1 2xl:px-3 mb-5 bg-gradient-to-r from-orange-50 to-amber-50 h-screen">
+        <div className="flex flex-col min-h-screen bg-gradient-to-r from-orange-50 to-amber-50">
           
             <Navbar>
 
             </Navbar>
-<div>
-    <h1 className="text-center text-[30px]  ">  Login / Register to conitnue</h1>
-</div>
-            <Outlet>
+            <div className="mb-6">
+                <h1 className="text-center text-[30px]  ">  Login / Register to continue</h1>
+            </div>
+            
+            <div className="grow">
+                <Outlet>
 
-            </Outlet>
+                </Outlet>
+            </div>
+
             <div className="mt-5">
                 <Footer></Footer>
             </div>

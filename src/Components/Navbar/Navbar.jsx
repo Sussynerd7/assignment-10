@@ -6,7 +6,10 @@ import { IoIosLogOut } from 'react-icons/io';
 import { FaArrowRight } from 'react-icons/fa';
 const Navbar = () => {
         const { user,logOut } = useAuth();
-// console.log(user)/
+// console.log(user.photoURL);
+
+
+// const img = user.photoURL;
 const navigate = useNavigate();
 
     // console.log(user.photoURL)
@@ -19,7 +22,7 @@ const dynamicbtn = <>
   <div className="dropdown"> 
     <label tabIndex={0} className="btn bg-[#ef451c] text-white pl-1 py-[30px] text-[18px] gap-2 flex items-center">
       <figure>
-        <img src={user?.photoURL || logo} alt="user" className="w-12 h-12 rounded-full" />
+        <img src={ user?.photoURL || logo} alt="user" className="w-12 h-12 rounded-full" />
       </figure>
       
       Options

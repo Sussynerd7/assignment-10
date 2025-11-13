@@ -5,16 +5,21 @@ import Foodcards from '../Foodshow/Foodcards';
 
 const Allfood = () => {
    const  [foods,setFood] = useState([])
+   const  [load,setload] = useState(true)
+
+   
 //    const {user} = useAuth();
 //    console.log(user)
 
    useEffect(() => {
+    setload(true)
         api.get('/allfoods')
             .then(res => {
 
                 const available = res.data.filter(food =>food.status === "available")
                 console.log(available)
                 setFood(available);
+                setload(false)
             })
             
             .catch(error => {
@@ -25,15 +30,27 @@ const Allfood = () => {
 
     // console.log(foods)
     return (
-        <div className='bg-gradient-to-r  from-orange-50 to-amber-50'>
+        <div className='bg-gradient-to-r h-full from-orange-50 to-amber-50'>
 
             <h1 className='text-secondary text-[40px] font-semibold text-center my-10'>Browse the available food</h1>
 
-            <div className='2xl:grid-cols-3 grid-cols-2 grid gap-2 max-w-[1200px] mx-auto px-2'>
+{
+    load? <div className='mx-auto flex justify-center my-10'><span className="loading loading-spinner xl:w-[500px] 2xl:w-[700px] w-[300px]"></span></div>:  <div className='2xl:grid-cols-3 grid-cols-2 grid gap-2 max-w-[1200px] mx-auto px-2'>
             {foods.map(food=>(<Foodcards key={food._id} food={food} ></Foodcards>))}
-        </div>
+        </div> 
+   }
+            
         </div>
     );
 };
 
 export default Allfood;
+
+
+
+// {
+//     loader? <div className='mx-auto flex justify-center my-10'><span className="loading loading-spinner xl:w-[500px] 2xl:w-[700px] w-[300px]"></span></div>:" <div className='2xl:grid-cols-3 grid-cols-2 grid gap-2 max-w-[1200px] mx-auto px-2 '>
+
+//         {foods.map(food=>(<Foodcards key={food._id} food={food}></Foodcards>))}
+//     </div>"
+//    }

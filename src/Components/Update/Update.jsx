@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import api from '../../Api/Api';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Update = () => {
+    const navigate = useNavigate();
     const { id } = useParams(); 
     const handleDelete = async () => {
   
@@ -12,6 +13,7 @@ const Update = () => {
     const response = await api.delete(`/deletefood/${id}`);
     if (response.data.success) {
       toast("✅ Food deleted successfully");
+      navigate('/')
     } else {
       toast("⚠️ " + response.data.message);
     }
@@ -97,7 +99,7 @@ const handleupdate = async (e) => {
 
     return (
         <div className="container mx-auto p-4 max-w-4xl">
-            
+            <ToastContainer/>
             <header className="flex justify-between items-center pb-4 border-b border-gray-300 mb-6">
                 <h1 className="text-2xl font-bold text-gray-800">
                     Food Details: {title}
