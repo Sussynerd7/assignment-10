@@ -1,6 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Navbar from '../Components/Navbar/Navbar';
+import Footer from '../Components/Footer/Footer';
+// import Footer from 'daisyui/components/footer';
 
 const Authlayout = () => {
     return (
@@ -15,6 +17,10 @@ const Authlayout = () => {
             <Outlet>
 
             </Outlet>
+            <div className="mt-5">
+                <Footer></Footer>
+            </div>
+
         </div>
     );
 };

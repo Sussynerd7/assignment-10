@@ -1,25 +1,38 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import logo from '../../assets/ChatGPT Image Nov 9, 2025, 12_26_34 PM.png'
 import { useAuth } from '../../Authprovider/CustomAuthhook';
 import { IoIosLogOut } from 'react-icons/io';
 import { FaArrowRight } from 'react-icons/fa';
 const Navbar = () => {
-    const {user,logOut} = useAuth();
-    // const [open, setOpen] = React.useState(false);
+        const { user,logOut } = useAuth();
+// console.log(user)/
+const navigate = useNavigate();
 
+    // console.log(user.photoURL)
+    // const [open, setOpen] = React.useState(false);
+const logout = ()=>{
+  logOut()
+navigate('/')
+}
 const dynamicbtn = <>
-  <div className="dropdown">
+  <div className="dropdown"> 
     <label tabIndex={0} className="btn bg-[#ef451c] text-white pl-1 py-[30px] text-[18px] gap-2 flex items-center">
-      <img src={user?.photoURL} alt="user" className="w-14 h-14 rounded-full" />
+      <figure>
+        <img src={user?.photoURL || logo} alt="user" className="w-12 h-12 rounded-full" />
+      </figure>
+      
       Options
     </label>
     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-40 mt-2">
    <div className='flex flex-col space-y-2'>
-     <Link className='btn'>Add food <FaArrowRight></FaArrowRight></Link>
-    <Link className='btn'>My food requests <FaArrowRight></FaArrowRight></Link>
-    <Link className='btn'>Manage My food <FaArrowRight></FaArrowRight></Link>
-      <button onClick={logOut} className="btn">log out <IoIosLogOut></IoIosLogOut> </button>
+     <Link to={
+      '/create'
+     } className='btn'>Add food <FaArrowRight></FaArrowRight></Link>
+    <Link to={'/requests'} className='btn'>My food requests <FaArrowRight></FaArrowRight></Link>
+    <Link to={'/myfoods'} className='btn'>Manage My food <FaArrowRight></FaArrowRight></Link>
+      <button onClick={logout} className="btn">log out <IoIosLogOut></IoIosLogOut> </button>
+
 
    </div>
     </ul>
@@ -55,7 +68,7 @@ const dynamicbtn = <>
 );
 
     return (
-        <div className='border-b bg-gradient-to-r from-orange-50 to-amber-50 mt-2 border-[#34533f]'>
+        <div className='border-b bg-gradient-to-r from-orange-50 to-amber-50  border-[#34533f]'>
             <div className='flex w-full items-center  justify-between  mb-3 '>
                 {/* <div>
                     <h1 className="text-[#ef451c] text-[40px] font-bold ">CFS/</h1>

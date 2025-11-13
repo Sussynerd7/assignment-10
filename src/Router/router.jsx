@@ -5,40 +5,68 @@ import Allfood from "../Components/Allfood/Allfood";
 import Authlayout from "../Authlayout/Authlayout";
 import Register from "../Authlayout/Register";
 import Login from "../Authlayout/Login";
+import Details from "../Components/Foodshow/Details";
+import Create from "../Cruds/Create";
+import Myfoods from "../Components/Myfoods/Myfoods";
+import Update from "../Components/Update/Update";
+import Myrequest from "../Cruds/Myrequest";
 
 const router = createBrowserRouter([
-{
-    path:'/',
-    Component:Homelayout,
-    children:[
-        
+    {
+        path: '/',
+        Component: Homelayout,
+        children: [
+
             {
-                index:true,
-                element:<Home></Home>
+                index: true,
+                element: <Home></Home>
             },
             {
-                path:'/foods',
-                element:<Allfood></Allfood>
-            }
-        
-    ]
+                path: '/foods',
+                //here
+                element: <Allfood></Allfood>
+            },
+            {
+                path: '/food/:id',
+                element: <Details></Details>
+            },
+            {
+                path: '/create',
+                element: <Create></Create>
+            },
+            {
+                path: '/myfoods',
+                element: <Myfoods></Myfoods>
+            },
+            {
+                path: '/update/:id',
+                element: <Update></Update>
+            },
+            {
+                path: '/requests',
+                element: <Myrequest></Myrequest>
+            },
+           
 
-},
+        ]
 
-{
-    path:'/auth',
-    element:<Authlayout></Authlayout>,
-    children:[
-        {
-            path:'/auth/register',
-            element:<Register></Register>
-        },
-        {
-            path:'/auth/login',
-            element:<Login></Login>
-        },
-    ]
-}
+    },
+     {
+        path: '/auth',
+        element: <Authlayout></Authlayout>,
+        children: [
+            {
+                path: '/auth/register',
+                element: <Register></Register>
+            },
+            {
+                path: '/auth/login',
+                element: <Login></Login>
+            },
+        ]
+    }
+
+    
 ]);
 
 

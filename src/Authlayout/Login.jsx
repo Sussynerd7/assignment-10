@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router'
 
 const Login = () => {
     const { user, setUser, signInUseremail, googleSignIn } = useAuth()
+
+    // console.log()
 const navigate = useNavigate()
     const handleEmaillogin = (e) => {
         e.preventDefault()
@@ -14,7 +16,7 @@ const navigate = useNavigate()
         signInUseremail(email, pass)
         .then(result => {
             setUser(result.user)
-            console.log(result.user)
+            // console.log(result.user)
             navigate('/')
         })
         .catch(er => console.log(er.message))
@@ -23,8 +25,9 @@ const navigate = useNavigate()
     const handleGoogle = () => {
         googleSignIn()
         .then(result => {
-            setUser(result.user)
+            
             console.log(result.user)
+            setUser(result.user)
             navigate('/')
         })
         .catch(er => console.log(er.message))

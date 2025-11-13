@@ -15,24 +15,24 @@ import { AuthContext } from './Authcontext';
 const googleProvider = new GoogleAuthProvider(); 
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const googleSignIn = () => {
-        setLoading(true);
-        return signInWithPopup(auth, googleProvider);
+        // setLoading(true);
+        return signInWithPopup(auth, googleProvider)
     };
     const logOut = () => {
     return signOut(auth);
 
 };
     const createUseremail = (email, password) => {
-        setLoading(true);
+        // setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
     const signInUseremail = (email, password) => {
-        setLoading(true);
+        // setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 const updatephotousername = (user, username, photoURL) => {

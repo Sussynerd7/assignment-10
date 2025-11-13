@@ -1,8 +1,17 @@
 @import "tailwindcss";
-@plugin "daisyui";
-
-
-
+@plugin "daisyui" {
+  themes: light --default;
+ }
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #ef451c;
+  --color-secondary: #34533f;
+}
+ 
+/* this is the one i need
+[]
+[] */
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{

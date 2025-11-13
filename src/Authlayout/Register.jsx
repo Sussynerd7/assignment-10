@@ -2,41 +2,66 @@ import React from 'react'
 import { useAuth } from '../Authprovider/CustomAuthhook'
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate } from 'react-router'
+import { toast, ToastContainer } from 'react-toastify'
 
 const Register = () => {
-    const { user, setUser, createUseremail, googleSignIn,updatephotousername } = useAuth();
-    const navigate= useNavigate();
-console.log(user)
+    const { user, setUser, createUseremail, googleSignIn, updatephotousername } = useAuth();
+    const navigate = useNavigate();
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/; 
+    
+    
     const handleemailregister = (e) => {
-    e.preventDefault()
-    const email = e.target.email.value
-    const pass = e.target.pass.value
-    const username = e.target.username.value
-    const photoURL = e.target.photoURL.value
+        e.preventDefault();
+        const email = e.target.email.value;
+        const pass = e.target.pass.value;
+        const username = e.target.username.value;
+        const photoURL = e.target.photoURL.value;
+        //  console.log(user)
+        if (pass.length < 6) {
+            toast.error("Password must be at least 6 characters long.");
+            return;
+        }
 
-    createUseremail(email, pass)
-    .then(result => {
-        updatephotousername(result.user, username, photoURL)
-        .then(() => {
-            setUser({ ...result.user, displayName: username, photoURL: photoURL })
-            console.log(result.user)
-            navigate('/')
+        if (!passwordRegex.test(pass)) {
+            toast.error("Password must contain at least one uppercase letter and one lowercase letter.");
+            return;
+        }
+
+        createUseremail(email, pass)
+        .then(result => {
+            const registeredUser = result.user;
+
+            updatephotousername(registeredUser, username, photoURL)
+            .then(() => {
+                
+                setUser(registeredUser); 
+                
+                toast.success("Registration successful!");
+                navigate('/');
+            })
+            .catch(er => {
+                console.log(er.message);
+                toast.error(er.message);
+            });
         })
-        .catch(er => console.log(er.message))
-    })
-    .catch(er => console.log(er.message))
-}
+        .catch(er => {
+            console.log(er.message);
+            toast.error(er.message);
+        });
+    }
 
 
     const handleGoogle = () => {
         googleSignIn()
         .then(result => {
-            setUser(result.user)
-            console.log(result.user)
-            navigate('/')
-
+            setUser(result.user);
+            toast.success("Signed in with Google successfully!");
+            navigate('/');
         })
-        .catch(er => console.log(er.message))
+        .catch(er => {
+            console.log(er.message);
+            toast.error(er.message);
+        });
     }
 
     return (
@@ -89,9 +114,8 @@ console.log(user)
                     Sign in with Google
                 </button>
                 <Link to={'/auth/login'}>already have an account?<span className='text-red-500'>Login</span></Link>
-                  
             </form>
-          
+            <ToastContainer></ToastContainer>
         </div>
     )
 }
