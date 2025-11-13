@@ -8,7 +8,7 @@ const Allfood = () => {
    const  [load,setload] = useState(true)
 
    
-//    const {user} = useAuth();
+
 //    console.log(user)
 
    useEffect(() => {
@@ -17,7 +17,7 @@ const Allfood = () => {
             .then(res => {
 
                 const available = res.data.filter(food =>food.status === "available")
-                console.log(available)
+                
                 setFood(available);
                 setload(false)
             })
