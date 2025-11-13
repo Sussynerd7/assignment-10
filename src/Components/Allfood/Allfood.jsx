@@ -32,7 +32,7 @@ const Allfood = () => {
     return (
         <div className='bg-gradient-to-r h-full from-orange-50 to-amber-50'>
 
-            <h1 className='text-secondary text-[40px] font-semibold text-center my-10'>Browse the available food</h1>
+            <h1 className='text-secondary text-[40px] font-semibold text-center my-10'>Browse the available food({foods.length})</h1>
 
 {
     load? <div className='mx-auto flex justify-center my-10'><span className="loading loading-spinner xl:w-[500px] 2xl:w-[700px] w-[300px]"></span></div>:  <div className='2xl:grid-cols-3 grid-cols-2 grid gap-2 max-w-[1200px] mx-auto px-2'>
