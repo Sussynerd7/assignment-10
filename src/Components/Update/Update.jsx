@@ -12,7 +12,7 @@ const Update = () => {
   try {
     const response = await api.delete(`/deletefood/${id}`);
     if (response.data.success) {
-      toast("✅ Food deleted successfully");
+      toast("✅ Food was deleted successfully");
       navigate('/')
     } else {
       toast("⚠️ " + response.data.message);
