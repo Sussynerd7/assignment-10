@@ -117,7 +117,7 @@ const handleupdate = async (e) => {
                         <img 
                             src={imgurl || 'https://via.placeholder.com/400'} 
                             alt={title} 
-                            className="w-full h-56 object-cover"
+                            className="w-full h-[223px] object-cover"
                         />
                     </div>
 
