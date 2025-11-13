@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router'
 import { toast, ToastContainer } from 'react-toastify'
 
 const Register = () => {
-    const { user, setUser, createUseremail, googleSignIn, updatephotousername } = useAuth();
+    const {  setUser, createUseremail, googleSignIn, updatephotousername } = useAuth();
     const navigate = useNavigate();
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/; 
     

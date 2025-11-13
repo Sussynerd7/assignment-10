@@ -65,13 +65,13 @@ const dynamicbtn = <>
         }`
       }
     >
-      All Foods
+      All foods
     </NavLink>
   </>
 );
 
     return (
-        <div className='border-b bg-gradient-to-r from-orange-50 to-amber-50  border-[#34533f]'>
+        <div className='border-b 2xl:px-3 pt-1 bg-gradient-to-r from-orange-50 to-amber-50  border-[#34533f]'>
             <div className='flex w-full items-center  justify-between  mb-3 '>
                 {/* <div>
                     <h1 className="text-[#ef451c] text-[40px] font-bold ">CFS/</h1>

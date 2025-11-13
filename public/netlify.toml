@@ -1,0 +1,12 @@
+# 1. Global Build Settings
+[build]
+  command = "npm run build" 
+  publish = "build" # Example: for a Create-React-App build
+  functions = "netlify/functions"
+  
+# 2. Single Page Application (SPA) Fallback
+# This ensures that client-side routes (like /about) load correctly.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -2,6 +2,11 @@ import React from 'react';
 import logo  from "../../assets/ChatGPT Image Nov 9, 2025, 12_26_34 PM.png"
 const Footer = () => {
     return (
+
+
+        // <div className='bg-black w-full py-10'>
+        //     <h1></h1>
+        // </div>
         <div className='mt-5'>
             <footer className=" footer bg-[#ef451c] sm:footer-horizontal  text-neutral-content items-center p-4">
   <aside className="grid-flow-col items-center">
@@ -56,7 +61,7 @@ const Footer = () => {
   </nav>
 </footer>
         </div>
-    );
+  );
 };
 
 export default Footer;

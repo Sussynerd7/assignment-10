@@ -32,9 +32,9 @@ const Myrequest = () => {
         fetchRequests();
     }, [user]);
 
-    const handleStatusUpdate = async (id, newStatus) => {
+    const handleStatusUpdate = async (id, newStatus,status) => {
         try {
-            const response = await api.patch(`/updaterequeststatus/${id}`, { newStatus });
+            const response = await api.patch(`/updaterequeststatus/${id}`, { status,newStatus });
             
             if (response.data.success) {
                 if (newStatus === 'accepted') {
@@ -74,7 +74,7 @@ const Myrequest = () => {
                             <p className="text-gray-600">Request Status: <span className={`font-bold ${food.reqstatus === 'accepted' ? 'text-green-600' : food.reqstatus === 'rejected' ? 'text-red-600' : 'text-yellow-600'}`}>{food.reqstatus || 'pending'}</span></p>
                             <div className='space-x-4 mt-4'>
                                 <button 
-                                    onClick={() => handleStatusUpdate(food._id, 'accepted')}
+                                    onClick={() => handleStatusUpdate(food._id, 'accepted','donated')}
                                     className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition"
                                 >
                                     Accept
