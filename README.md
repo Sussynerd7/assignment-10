@@ -11,3 +11,11 @@
 
 * **Client-Side:** [https://github.com/Sussynerd7/assignment-10.git](https://github.com/Sussynerd7/assignment-10.git)
 * **Server-Side:** [https://github.com/Sussynerd7/assignment-10-server.git](https://github.com/Sussynerd7/assignment-10-server.git)
+
+* ### features
+
+* ** Has basic crud functionalities like
+
+* *can post a product
+* *posted product can be ordered by users and the post author is admin
+* *admin can delete / hide the product 
